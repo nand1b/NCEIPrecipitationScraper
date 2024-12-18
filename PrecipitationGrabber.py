@@ -1,18 +1,13 @@
 import json
-import queue
-import time
 import traceback
-from json import JSONDecoder
 from time import sleep
 
 import selenium
 import selenium.webdriver
-import shutil
 import os
 
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.devtools.v85.dom import scroll_into_view_if_needed
 from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.wait import WebDriverWait
