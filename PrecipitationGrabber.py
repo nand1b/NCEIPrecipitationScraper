@@ -80,6 +80,8 @@ def initialize_driver(down_dir):
 
 def data_downloader(parameter, months, year_start, year_end, county_list, driver):
     for county in county_list:
+        if not county == "Yuba County":
+            continue
         for month in months:
             driver.get("https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/county/time-series")
             # time.sleep(5) # website does not like when you grab data before its done loading the first plot
@@ -121,6 +123,7 @@ def data_downloader(parameter, months, year_start, year_end, county_list, driver
 
         # county loop last line
 
+    driver.implicitly_wait(1) # last download sometimes won't complete, not sure why, but this may help
     driver.close()
 
 
